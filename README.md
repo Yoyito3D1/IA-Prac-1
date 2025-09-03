@@ -1,35 +1,38 @@
-# 🗺️ Pathfinding Algorithms: A* & Best-First Search 🚀
+# 🗺️ Pathfinding Algorithms: A* & Best-First Search 🚀  
 
-Aquest projecte implementa i compara dos algoritmes clàssics de cerca heurística per trobar camins òptims en un mapa: **A\*** i **Best-First Search**. Està desenvolupat en Java i treballa amb mapes representats com a matrius carregades des de fitxers de text.
-
----
-
-## 🔍 Descripció del projecte
-
-- **A\*** (A-Star): Algoritme de cerca informada que utilitza una heurística per trobar el camí més curt des d’un node inicial fins a un node final, considerant el cost acumulat i l’estimació restant.  
-- **Best-First Search**: Cerca heurística que prioritza expandir el node més proper al destí segons una funció heurística, però sense tenir en compte el cost acumulat com A*.
-
-Els mapes s’implementen mitjançant la classe `MapGrid`, que carrega una matriu des d’un fitxer `.txt`. Els nodes són instàncies de la classe `Node`, que guarden informació de posició, cost i heurística.
+This project implements and compares two classic heuristic search algorithms for finding optimal paths in a grid map: **A\*** and **Best-First Search**.  
+It is developed in **Java** and works with maps represented as matrices loaded from text files.  
 
 ---
 
-## 🛠️ Funcionament
+## 🔍 Project Description  
 
-- Es pot triar entre executar A* o Best-First Search canviant una flag (`Node.setUseAStar(true/false)`).  
-- Els mapes d’exemple es troben a `src/data/matrix.txt` i `src/data/matrix2.txt`.  
-- L’algoritme busca el camí entre un node d’inici i un node final donats (per exemple, `(0,0)` a `(9,9)`).  
-- Es mostra per consola la seqüència de nodes del camí trobat, el cost total i el nombre d’iteracions que ha trigat l’algoritme.  
-- També es visualitza el camí sobre la matriu impresa a consola.
+- **A\* (A-Star)**: An informed search algorithm that uses a heuristic to find the shortest path from a start node to a goal node, considering both the accumulated cost and the estimated remaining distance.  
+- **Best-First Search**: A heuristic-based search that prioritizes expanding the node closest to the goal according to a heuristic function, but does not account for accumulated cost like A\*.  
+
+Maps are implemented through the **MapGrid** class, which loads a matrix from a `.txt` file.  
+Nodes are represented by the **Node** class, which stores position, cost, and heuristic information.  
+
+---
+
+## 🛠️ How It Works  
+
+- You can choose between running **A\*** or **Best-First Search** by toggling a flag (`Node.setUseAStar(true/false)`).  
+- Example maps are provided in `src/data/matrix.txt` and `src/data/matrix2.txt`.  
+- The algorithm searches for a path between a start node and a goal node (e.g., `(0,0)` to `(9,9)`).  
+- The console displays:
+  - The sequence of nodes in the found path  
+  - The total cost  
+  - The number of iterations the algorithm took  
+- The path is also visualized directly on the printed matrix in the console.  
 
 ---
 
-## 📂 Estructura principal del codi
+## 📂 Main Code Structure  
 
-- **Main.java**: punt d’entrada on es configura el mapa, els nodes d’inici i final, i s’executa l’algoritme seleccionat.  
-- **algorithms.AStar**: implementació de l’algoritme A*.  
-- **algorithms.BestFirstSearch**: implementació de l’algoritme Best-First Search.  
-- **heuristics.HeuristicImplementation**: classe que defineix la funció heurística utilitzada.  
-- **utils.MapGrid**: classe per gestionar el mapa i imprimir el camí.  
-- **models.Node**: representació dels nodes amb dades de posició, cost i heurística.
-
----
+- **Main.java** → Entry point; configures the map, start/goal nodes, and runs the selected algorithm.  
+- **algorithms.AStar** → Implementation of the A\* algorithm.  
+- **algorithms.BestFirstSearch** → Implementation of the Best-First Search algorithm.  
+- **heuristics.HeuristicImplementation** → Defines the heuristic function used.  
+- **utils.MapGrid** → Manages the grid map and prints the path.  
+- **models.Node** → Represents nodes with position, cost, and heuristic data.  
